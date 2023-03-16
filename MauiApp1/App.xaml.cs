@@ -15,8 +15,8 @@ public partial class App : Application
         ScreenWidth = displaysize.Width;
         ScreenHeight = displaysize.Height;
 
-        //MainPage = new NavigationPage(new MainPage());
-        MainPage = new NavigationPage(new CountdownDisplayPage());
+        MainPage = new NavigationPage(new MainPage());
+        //MainPage = new NavigationPage(new CountdownDisplayPage());
     }
 
     protected override void OnResume()

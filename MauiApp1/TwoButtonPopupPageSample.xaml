@@ -8,7 +8,7 @@
              ExecuteButtonLabel="実行"
              PopupTitle="ポップアップサンプル">
     <extensioned:TwoButtonPopupPageTemplate.ChildContent>
-        <StackLayout>
+        <StackLayout Spacing="10">
             <Label
                 FontSize="Medium"
                 HorizontalOptions="FillAndExpand"
@@ -19,6 +19,9 @@
             <Button x:Name="ShowPopupBtn"
                     Text="Show Popup"
                     Clicked="ShowPopupBtn_Clicked"/>
+            <Button x:Name="ShowNexPageBtn"
+                    Text="Show Page"
+                    Clicked="ShowNexPageBtn_Clicked"/>
         </StackLayout>
     </extensioned:TwoButtonPopupPageTemplate.ChildContent>
 </extensioned:TwoButtonPopupPageTemplate>

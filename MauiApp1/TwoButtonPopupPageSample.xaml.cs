@@ -18,4 +18,13 @@ public partial class TwoButtonPopupPageSample : TwoButtonPopupPageTemplate
     {
         await PopupAction.DisplayPopup(new SamplePopupPage2());
     }
+
+    private async void ShowNexPageBtn_Clicked(object sender, EventArgs e)
+    {
+        MainThread.BeginInvokeOnMainThread(async () =>
+        {
+            await Navigation.PushAsync(new NewPage3("hogehoge"));
+        });
+       
+    }
 }
