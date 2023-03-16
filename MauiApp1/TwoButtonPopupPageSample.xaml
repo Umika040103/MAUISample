@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extensioned:TwoButtonPopupPageTemplate xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:extensioned="clr-namespace:MauiApp1"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.TwoButtonPopupPageSample"
+             Title="TwoButtonPopupPageSample"
+             CancelButtonLabel="キャンセルき"
+             ExecuteButtonLabel="実行"
+             PopupTitle="ポップアップサンプル">
+    <extensioned:TwoButtonPopupPageTemplate.ChildContent>
+        <StackLayout>
+            <Label
+                FontSize="Medium"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Start"
+                LineBreakMode="WordWrap"
+                Text="hogehogehogehogehogehoge"
+                VerticalOptions="FillAndExpand" />
+            <Button x:Name="ShowPopupBtn"
+                    Text="Show Popup"
+                    Clicked="ShowPopupBtn_Clicked"/>
+        </StackLayout>
+    </extensioned:TwoButtonPopupPageTemplate.ChildContent>
+</extensioned:TwoButtonPopupPageTemplate>

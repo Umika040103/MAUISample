@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.RISTStepImgSamplePage">
+    <StackLayout Spacing="0">
+        <Grid Margin="10,0,10,0" VerticalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"
+                       Padding="0,15,0,15"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="接続前設定　RIST Ope Mode"/>
+
+                <StackLayout Grid.Row="1"
+                             VerticalOptions="StartAndExpand">
+                    <Grid VerticalOptions="StartAndExpand">
+                        <StackLayout Spacing="0">
+                            <Grid
+                                RowSpacing="0"
+                                VerticalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <CarouselView
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    Loop="False"
+                                    ItemsSource="{Binding SampleStepImageDatas}">
+                                    <CarouselView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout HorizontalOptions="FillAndExpand">
+                                                <Label Text="{Binding Name}" TextColor="Black"/>
+                                                <Image WidthRequest="300"
+                         
+                                                       HorizontalOptions="Center"
+                                                       Source="{Binding ImgSrc}"/>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CarouselView.ItemTemplate>
+                                </CarouselView>
+                                <Button
+                                    x:Name="PreImgButoon"
+                                    Grid.Column="0"
+                                    BackgroundColor="Blue"
+                                    TextColor="White"
+                                    Text="L"
+                                    FontSize="Large"
+                                    FontAttributes="Bold"
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    VerticalOptions="Center"
+                                    Opacity="0.5"
+                                    Clicked="PreImgButoon_Clicked"/>
+                                <Button
+                                    x:Name="NextImgButton"
+                                    Grid.Column="2"
+                                    BackgroundColor="Blue"
+                                    TextColor="White"
+                                    Text="R"
+                                    FontSize="Large"
+                                    FontAttributes="Bold"
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    VerticalOptions="Center"
+                                    Opacity="0.5"
+                                    Clicked="NextImgButton_Clicked"/>
+                            </Grid>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </StackLayout>
+</ContentPage>

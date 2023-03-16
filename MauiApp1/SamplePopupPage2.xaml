@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePopupPage 
+    xmlns:pages="clr-namespace:MauiPopup.Views;assembly=MauiPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SamplePopupPage2"
+             Title="SamplePopupPage2">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button x:Name="CloseBtn"
+                Text="Close"
+                Clicked="CloseBtn_Clicked"/>
+    </VerticalStackLayout>
+</pages:BasePopupPage>

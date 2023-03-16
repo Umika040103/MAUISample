@@ -1,0 +1,33 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Color Definitions -->
+            <Color x:Key="ColorBlue">#2C5898</Color>
+            <Color x:Key="ColorRed">#B7472A</Color>
+            <Color x:Key="ColorGreen">#008c55</Color>
+            <Color x:Key="ColorSkyBlue">#00D6D3</Color>
+            <Color x:Key="ColorOrange">#F0803c</Color>
+            <Color x:Key="ColorLightRed">#FDDFDF</Color>
+            <Color x:Key="ColorCautionRed">#D6000</Color>
+            <Color x:Key="ColorSystemBlue">#017aff</Color>
+            <Color x:Key="ColorSystemDarkBlue">#039A98</Color>
+            <Color x:Key="ColorSystemGray">#808080</Color>
+            <Color x:Key="ColorSystemLightGray">#D5D5D5</Color>
+            <Color x:Key="ColorSystemLightLightGray">#EBEBEB</Color>
+            <Color x:Key="ColorHomeBackgroundGray">#878787</Color>
+            <Color x:Key="ColorFaintSkyBlue">#CEE5FF</Color>
+            <Color x:Key="ColorLightBlue">#D7FEFF</Color>
+            <Color x:Key="ColorLightOrange">#FFC29E</Color>
+            <Color x:Key="ColorRedForBlackBackground">#E02626</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

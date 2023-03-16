@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.CountdownDisplayPage"
+             Title="CountdownDisplayPage">
+    <VerticalStackLayout>
+        <Label Text="{Binding Countdown}"
+               FontSize="Large"
+               FontAttributes="Bold"
+               TextColor="Blue"
+               HorizontalOptions="Center"/>
+        <Button x:Name="DisplayNextPageBtn"
+        Text="Navigation PushAsync"
+                Clicked="DisplayNextPageBtn_Clicked"/>
+        <Button x:Name="DisplayPopupPageBtn"
+                Text="PopupPage PushAsync"
+                Clicked="DisplayPopupPageBtn_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

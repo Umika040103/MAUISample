@@ -1,0 +1,192 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>MauiApp1</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>MauiApp1</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.mauiapp1</ApplicationId>
+		<ApplicationIdGuid>1f8a7d90-e0d7-4ea1-902b-b1a2b11a6d2b</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0-ios'">
+	  <CodesignKey>Apple Development: みか 卜部 (865PHQN36S)</CodesignKey>
+	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <BuildIpa>True</BuildIpa>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	  <BuildIpa>True</BuildIpa>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\200px-Alouatta_guariba.jpg" />
+	  <MauiImage Remove="Resources\Images\200px-Papio_anubis.jpg" />
+	  <MauiImage Remove="Resources\Images\220px-BlueMonkey.jpg" />
+	  <MauiImage Remove="Resources\Images\Capuchin_Costa_Rica.jpg" />
+	  <MauiImage Remove="Resources\Images\Golden_lion_tamarin_portrait3.jpg" />
+	  <MauiImage Remove="Resources\Images\Macaca_fuscata_fuscata1.jpg" />
+	  <MauiImage Remove="Resources\Images\Mandrill_at_san_francisco_zoo.jpg" />
+	  <MauiImage Remove="Resources\Images\Saimiri_sciureus-1_Luc_Viatour.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\common\afterconnect_1_image.png" />
+	  <None Remove="Resources\Images\common\afterconnect_2_image.png" />
+	  <None Remove="Resources\Images\common\afterconnect_3_image.png" />
+	  <None Remove="Resources\Images\common\beforeconnect_1_image.png" />
+	  <None Remove="Resources\Images\common\beforeconnect_2_image.png" />
+	  <None Remove="Resources\Images\common\beforeconnect_3_image.png" />
+	  <None Remove="Resources\Images\common\bkicon.png" />
+	  <None Remove="Resources\Images\common\fcicon.png" />
+	  <None Remove="Resources\Images\common\guidance_ble_search.png" />
+	  <None Remove="Resources\Images\common\guidance_ble_search_square.png" />
+	  <None Remove="Resources\Images\common\progressimage.png" />
+	  <None Remove="Resources\Images\common\signallevel_0_image.png" />
+	  <None Remove="Resources\Images\common\signallevel_1_image.png" />
+	  <None Remove="Resources\Images\common\signallevel_2_image.png" />
+	  <None Remove="Resources\Images\common\signallevel_3_image.png" />
+	  <None Remove="Resources\Images\common\signallevel_4_image.png" />
+	  <None Remove="Resources\Images\common\startup_3step.png" />
+	  <None Remove="Resources\Images\common\startup_background.png" />
+	  <None Remove="Resources\Images\common\startup_characterplease.png" />
+	  <None Remove="Resources\Images\common\startup_decoration.png" />
+	  <None Remove="Resources\Images\common\startup_rist_icon.png" />
+	  <None Remove="Resources\Images\common\undertriangle.png" />
+	  <None Remove="Resources\Images\eng\SetupSteps_RISTOpeMode\after_1_img.png" />
+	  <None Remove="Resources\Images\eng\SetupSteps_RISTOpeMode\s1_img.png" />
+	  <None Remove="Resources\Images\eng\SetupSteps_RISTOpeMode\s2_img.png" />
+	  <None Remove="Resources\Images\eng\SetupSteps_RISTOpeMode\s3_img.png" />
+	  <None Remove="Resources\Images\eng\SetupSteps_RISTOpeMode\s4_img.png" />
+	  <None Remove="Resources\Images\eng\SetupSteps_RISTOpeMode_MAUIImg\s1_img.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\200px-Alouatta_guariba.jpg" />
+	  <EmbeddedResource Include="Resources\Images\200px-Papio_anubis.jpg" />
+	  <EmbeddedResource Include="Resources\Images\220px-BlueMonkey.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Capuchin_Costa_Rica.jpg" />
+	  <EmbeddedResource Include="Resources\Images\common\afterconnect_1_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\afterconnect_2_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\afterconnect_3_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\beforeconnect_1_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\beforeconnect_2_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\beforeconnect_3_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\bkicon.png" />
+	  <EmbeddedResource Include="Resources\Images\common\fcicon.png" />
+	  <EmbeddedResource Include="Resources\Images\common\guidance_ble_search.png" />
+	  <EmbeddedResource Include="Resources\Images\common\guidance_ble_search_square.png" />
+	  <EmbeddedResource Include="Resources\Images\common\progressimage.png" />
+	  <EmbeddedResource Include="Resources\Images\common\signallevel_0_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\signallevel_1_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\signallevel_2_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\signallevel_3_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\signallevel_4_image.png" />
+	  <EmbeddedResource Include="Resources\Images\common\startup_3step.png" />
+	  <EmbeddedResource Include="Resources\Images\common\startup_background.png" />
+	  <EmbeddedResource Include="Resources\Images\common\startup_characterplease.png" />
+	  <EmbeddedResource Include="Resources\Images\common\startup_decoration.png" />
+	  <EmbeddedResource Include="Resources\Images\common\startup_rist_icon.png" />
+	  <EmbeddedResource Include="Resources\Images\common\undertriangle.png" />
+	  <EmbeddedResource Include="Resources\Images\eng\SetupSteps_RISTOpeMode\after_1_img.png" />
+	  <EmbeddedResource Include="Resources\Images\eng\SetupSteps_RISTOpeMode\s1_img.png" />
+	  <EmbeddedResource Include="Resources\Images\eng\SetupSteps_RISTOpeMode\s2_img.png" />
+	  <EmbeddedResource Include="Resources\Images\eng\SetupSteps_RISTOpeMode\s3_img.png" />
+	  <EmbeddedResource Include="Resources\Images\eng\SetupSteps_RISTOpeMode\s4_img.png" />
+	  <EmbeddedResource Include="Resources\Images\Golden_lion_tamarin_portrait3.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Macaca_fuscata_fuscata1.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Mandrill_at_san_francisco_zoo.jpg" />
+	  <EmbeddedResource Include="Resources\Images\Saimiri_sciureus-1_Luc_Viatour.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\eng\SetupSteps_RISTOpeMode_MAUIImg\s1_img.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Plugin.Maui.Popup" Version="1.0.4" />
+	  <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="CaroucelViewSamplePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CountdownDisplayPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NewPage1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NewPage2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NewPage3.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ProgressRing.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="RISTStepImgSamplePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SamplePopupPage2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SwitchContentSamplePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Tabbedpage\AppTabbedPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="TwoButtonPopupPageSample.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="TwoButtonPopupPageTemplate.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

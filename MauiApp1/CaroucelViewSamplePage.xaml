@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:MauiApp1.ViewModels"
+             x:Class="MauiApp1.CaroucelViewSamplePage"
+             Title="CaroucelViewSamplePage">
+    <!-- <ContentPage.BindingContext>
+        <viewmodels:MonkeysViewModel /> 
+    </ContentPage.BindingContext>-->
+    <StackLayout VerticalOptions="Start">
+        <CarouselView x:Name="SampleCarouselView" ItemsSource="{Binding MonkeyDatas}" IndicatorView="IndicatorView" Loop="False">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HasShadow="True"
+                               BorderColor="DarkGray"
+                               CornerRadius="5"
+                               Margin="20"
+                               HeightRequest="300"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" 
+                                       FontAttributes="Bold"
+                                       FontSize="20"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+                                <Image Source="{Binding ImgData}" 
+                                       Aspect="AspectFill"
+                                       HeightRequest="150"
+                                       WidthRequest="150"
+                                       HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView x:Name="IndicatorView"
+                       HorizontalOptions="Center"
+                       />
+    </StackLayout>
+</ContentPage>

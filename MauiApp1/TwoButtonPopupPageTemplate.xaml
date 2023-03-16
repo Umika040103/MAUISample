@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePopupPage 
+     xmlns:pages="clr-namespace:MauiPopup.Views;assembly=MauiPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.TwoButtonPopupPageTemplate"
+             Title="TwoButtonPopupPageTemplate"
+    IsCloseOnBackgroundClick="False"
+    Padding="30,0,30,0">
+<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Frame x:Name="PopupFrame" BackgroundColor="White" CornerRadius="0" HasShadow="False" Padding="0,0,0,0">
+            <StackLayout Spacing="0">
+                <Grid  Padding="20,10,20,10" BackgroundColor="Black">
+                    <Label x:Name="TitleLabel" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="Medium" Text="{Binding Path=Title}" 
+                       TextColor="White" LineBreakMode="WordWrap"/>
+                </Grid>
+                <Grid Padding="20,10,20,10">
+                    <Grid x:Name="ContentsGrid"/>
+                </Grid>
+                <Grid VerticalOptions="EndAndExpand" Padding="20,0,20,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" x:Name="CancelButton" VerticalOptions="CenterAndExpand" FontSize="Medium" HeightRequest="{Binding Path=ButtonHeightRequest}"
+                            CornerRadius="{Binding Path=ButtonCornerRadius}" FontAttributes="Bold" BackgroundColor="White" BorderColor="Black" TextColor="Black" BorderWidth="2" Clicked="CancelButton_Clicked"/>
+                    <Button Grid.Column="1" x:Name="ExecuteButton" VerticalOptions="CenterAndExpand" FontSize="Medium" HeightRequest="{Binding Path=ButtonHeightRequest}"
+                            CornerRadius="{Binding Path=ButtonCornerRadius}" FontAttributes="Bold" BackgroundColor="{DynamicResource Key=ColorOrange}" TextColor="White" Clicked="ExecuteButton_Clicked"/>
+
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:BasePopupPage>

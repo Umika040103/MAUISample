@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SwitchContentSamplePage"
+             Title="SwitchContentSamplePage">
+    <StackLayout Padding="15">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="AllBtn"
+                    Grid.Column="0"
+                    Text="All"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="SkyBlue"
+                    TextColor="Black"
+                    Clicked="AllBtn_Clicked"/>
+            <Button x:Name="Type1Btn"
+                    Text="Type1"
+                    Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Clicked="Type1_Clicked"/>
+            <Button x:Name="Type2Btn"
+                    Text="Type2"
+                    Grid.Column="2"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    Clicked="Type2Btn_Clicked"/>
+        </Grid>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="Fill">
+                <ListView x:Name="DisplayListView" HasUnevenRows="True" SelectionMode="None" VerticalOptions="FillAndExpand"
+                          HorizontalOptions="FillAndExpand" ItemsSource="{Binding Path=Data}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Text="{Binding DisplayLabel}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" TextColor="Black" FontSize="Medium" FontAttributes="Bold">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding NextCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

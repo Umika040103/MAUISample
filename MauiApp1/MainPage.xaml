@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:MauiApp1.Helper"
+             x:Class="MauiApp1.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="{x:Static helpers:MaterialDesignIconFonts.AccessPointNetwork}"
+                   FontFamily="MaterialFontFamily"
+                   HorizontalOptions="Center"
+                   FontSize="Large"/>
+
+            <Grid>
+                <GraphicsView x:Name="ProgressView"
+                              BackgroundColor="{StaticResource Primary}"
+                              HeightRequest="100"
+                              WidthRequest="100"/>
+                <Button x:Name="ProgressButton"
+                        Text=""
+                        FontSize="32"
+                        FontFamily="MaterialFontFamily"
+                        HeightRequest="80"
+                        WidthRequest="80"
+                        CornerRadius="40"
+                        HorizontalOptions="Center"
+                        Clicked="ProgressButton_Clicked"
+                        BorderWidth="0"
+                        BackgroundColor="{StaticResource Primary}"/>
+
+            </Grid>
+            <Button x:Name="ResetButton"
+                    Text="Reset"
+                    Clicked="ResetButton_Clicked"
+                    TextColor="WhiteSmoke"/>
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="NextPageBtn"
+                Text="Next Page"
+                Clicked="NextPageBtn_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Button
+                        x:Name="ShowPopupBtn"
+                        Text="Show Popup"
+                        Clicked="ShowPopupBtn_Clicked"/>
+
+            <Button
+                        x:Name="ShowTabbedPageBtn"
+                        Text="TabbedPage"
+                        Clicked="ShowTabbedPageBtn_Clicked" />
+
+            <Border Stroke="Gray"
+                            StrokeThickness="2"
+                            >
+                <Picker x:Name="SamplePicker"
+                            ItemDisplayBinding="{Binding StrData}"
+                            TextColor="Black"
+                            HorizontalOptions="FillAndExpand"
+                            SelectedIndexChanged="SamplePicker_SelectedIndexChanged"
+                            HorizontalTextAlignment="Center"
+                            />
+            </Border>
+
+            <Button x:Name="CaroucelPageBtn"
+                            Text="Go Caroucel Sample Page"
+                            Clicked="CaroucelPageBtn_Clicked"/>
+
+                <Button x:Name="SwitchContentSamplePageBtn"
+                    Text="Go SwitchContentSamplePage"
+                    Clicked="SwitchContentSamplePageBtn_Clicked"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

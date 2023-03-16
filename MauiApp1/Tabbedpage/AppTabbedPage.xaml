@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <!--
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Tabbedpage.AppTabbedPage"
+            xmlns:local="clr-namespace:MauiApp1"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+             Title="AppTabbedPage">-->
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Tabbedpage.AppTabbedPage"
+            xmlns:local="clr-namespace:MauiApp1"
+             Title="AppTabbedPage">
+    <NavigationPage Title="One">
+        <x:Arguments>
+            <local:NewPage1 Title="One" />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Two">
+        <x:Arguments>
+            <local:NewPage1 Title="Two" />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Three">
+        <x:Arguments>
+            <local:NewPage1 Title="Three" />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Four">
+        <x:Arguments>
+            <local:NewPage1 Title="Four" />
+        </x:Arguments>
+    </NavigationPage>
+    
+</TabbedPage>
